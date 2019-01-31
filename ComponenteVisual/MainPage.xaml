@@ -10,8 +10,15 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="BlanchedAlmond">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Controles:Señal Width="400" Height="400" HorizontalAlignment="Center" VerticalAlignment="Top" Radio="{Binding Value, ElementName=slider}" Margin="76,249,0,0" Grid.Column="0"/>
+        <Slider x:Name="slider" Width="400" Minimum="0" Maximum="1" RenderTransformOrigin="0.5,0.5" StepFrequency="0.01" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="76,658,0,0" Grid.Column="0"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,150,0,0" Text="Un Color" FontSize="30" FontWeight="Bold" FontStyle="Italic" TextWrapping="Wrap" Height="40" Width="130"/>
         
-        <Controles:Señal Width="400" Height="400" HorizontalAlignment="Center" VerticalAlignment="Center" Radio="{Binding Value, ElementName=Slider}"/>
-        <Slider x:Name="Slider" HorizontalAlignment="Center" Margin="0,700,0,0" VerticalAlignment="Top" Width="400" Maximum="100"/> 
+        
     </Grid>
 </Page>
