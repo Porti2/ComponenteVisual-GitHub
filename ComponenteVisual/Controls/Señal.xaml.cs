@@ -46,7 +46,6 @@ namespace ComponenteVisual.Controls
             var s = d as Señal;
 
             radio = (double)e.NewValue;
-            string rojo = "#C00E0E";
 
             if (radio == 0 || radio <= 0.24)
             {
