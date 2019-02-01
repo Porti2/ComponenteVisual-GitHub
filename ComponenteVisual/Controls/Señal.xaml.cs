@@ -20,12 +20,15 @@ namespace ComponenteVisual.Controls
 {
     public sealed partial class Señal : UserControl
     {
+        public static double radio;
+
         public Señal()
         {
             this.InitializeComponent();
         }
 
         public double Radio
+
         {
             get { return (double)GetValue(RadioProperty); }
             set
@@ -42,28 +45,42 @@ namespace ComponenteVisual.Controls
         {
             var s = d as Señal;
 
-            double radio = (double)e.NewValue; 
+            radio = (double)e.NewValue;
+            string rojo = "#C00E0E";
 
             if (radio == 0 || radio <= 0.24)
             {
-                s.Calidad.Text = "Mala";
+                s.Calidad.Text = "Señal Mala";
+                s.Barra1.Fill = new SolidColorBrush(Colors.Red);
+                s.Barra2.Fill = new SolidColorBrush(Colors.DimGray);
+                s.Barra3.Fill = new SolidColorBrush(Colors.DimGray);
+                s.Barra4.Fill = new SolidColorBrush(Colors.DimGray);
             }
             else if (radio == 0.25 || radio <= 0.49)
             {
-                s.Calidad.Text = "Regular";
+                s.Calidad.Text = "Señal Regular";
+                s.Barra1.Fill = new SolidColorBrush(Colors.Yellow);
+                s.Barra2.Fill = new SolidColorBrush(Colors.Yellow);
+                s.Barra3.Fill = new SolidColorBrush(Colors.DimGray);
+                s.Barra4.Fill = new SolidColorBrush(Colors.DimGray);
             }
             else if (radio == 0.49 || radio <= 0.75)
             {
-                s.Calidad.Text = "Buena";
+                s.Calidad.Text = "Señal Buena";
+                s.Barra1.Fill = new SolidColorBrush(Colors.Orange);
+                s.Barra2.Fill = new SolidColorBrush(Colors.Orange);
+                s.Barra3.Fill = new SolidColorBrush(Colors.Orange);
+                s.Barra4.Fill = new SolidColorBrush(Colors.DimGray);
             }
             else if (radio == 0.75 || radio <= 1)
             {
-                s.Calidad.Text = "Excelente";
+                s.Calidad.Text = "Señal Excelente";
+                s.Barra1.Fill = new SolidColorBrush(Colors.Green);
+                s.Barra2.Fill = new SolidColorBrush(Colors.Green);
+                s.Barra3.Fill = new SolidColorBrush(Colors.Green);
+                s.Barra4.Fill = new SolidColorBrush(Colors.Green);
             }
-
-
-            s.Barra1.Offset = (double)e.NewValue;
-            s.Barra2.Offset = (double)e.NewValue;
         }
     }
 }
+

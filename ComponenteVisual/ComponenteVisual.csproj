@@ -122,9 +122,6 @@
     <Compile Include="Controls\Señal.xaml.cs">
       <DependentUpon>Señal.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SeñalColores.xaml.cs">
-      <DependentUpon>SeñalColores.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -152,10 +149,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Controls\Señal.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\SeñalColores.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
